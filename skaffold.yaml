@@ -1,0 +1,19 @@
+apiVersion: skaffold/v2beta17
+kind: Config
+metadata:
+  name: store-service
+build:
+  local:
+    useBuildkit: true
+  artifacts:
+  - image: dev/store-service
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - deployment.yaml
+portForward:
+- resourceType: service
+  resourceName: store-service
+  port: 8030
