@@ -10,8 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class BookingFoodResponse {
-    private String status;
-
+public class CancelDTO {
+    private Long orderId;
 
 }

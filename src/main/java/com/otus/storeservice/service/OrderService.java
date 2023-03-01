@@ -1,14 +1,16 @@
 package com.otus.storeservice.service;
 
 import com.otus.storeservice.entity.Order;
-import com.otus.storeservice.rabbitmq.domain.dto.BookingFoodDTO;
-import com.otus.storeservice.rabbitmq.domain.dto.BookingFoodResponse;
+import com.otus.storeservice.rabbitmq.domain.dto.CancelDTO;
+
+import java.util.List;
 
 
 public interface OrderService {
 
     Order saveOrder(Order order);
 
-    void cancelBookingFood(BookingFoodDTO bookingFoodDTO);
+    List<Order> findAllByOrderId(CancelDTO cancelDTO);
+    void deleteAll(List<Order> orders);
 
 }
