@@ -34,9 +34,9 @@ public class StorageServiceImpl implements StorageService {
             }
             return "Ok";
         } catch (DishIsMissingException e) {
-            return e.getMessage();
+            return "Выбранное блюдо недоступно";
         } catch (Exception e) {
-            return "Error";
+            return "Ошибка заказа блюда";
         }
     }
 
